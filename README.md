@@ -65,6 +65,15 @@ The notebook also explores model interpretability, focusing on the Random Forest
 
 Basic hyperparameter changes (e.g., `min_samples_leaf`) are tested to see their impact on performance and overfitting.
 
+The below plans were devised for Random Forest(RF) Model tuning:
+
+Plan 1 – Retrain RF without Year and save results
+Plan 2 – Permutation importance for Year on original model, we keep the original RF (with Year), and only measure how important Year is.
+Plan 3 – If “no Year” model looks better, inspect and tweak it, assuming Plan 1 showed RF without Year is better and you decide to keep rf_no_year:
+         3a. Inspect trees and depth
+         3b. Class balance of predictions (H/D/A)
+         3c. Try a small hyperparameter tweak – min_samples_leaf
+         
 ---
 
 ## Project Structure
@@ -74,7 +83,6 @@ Basic hyperparameter changes (e.g., `min_samples_leaf`) are tested to see their 
 - `models/` – Saved models (e.g., `rf_worldcup.joblib`) created with `joblib.dump`.
 - `README.md` – This file.
 
-(You can adjust folder names to match your repository.)
 
 ---
 
@@ -111,7 +119,7 @@ Basic hyperparameter changes (e.g., `min_samples_leaf`) are tested to see their 
 
 ## Future Work
 
-Possible extensions:
+I may try the following extensions if possible in future:
 
 - Try additional gradient boosting libraries such as **LightGBM** and **CatBoost**.
 - Add more match-level features (e.g., betting odds, team rankings, player strength).
