@@ -67,9 +67,9 @@ Basic hyperparameter changes (e.g., `min_samples_leaf`) are tested to see their 
 
 The below plans were devised for Random Forest(RF) Model tuning:
 
-Plan 1 – Retrain RF without Year and save results
-Plan 2 – Permutation importance for Year on original model, we keep the original RF (with Year), and only measure how important Year is.
-Plan 3 – If “no Year” model looks better, inspect and tweak it, assuming Plan 1 showed RF without Year is better and you decide to keep rf_no_year:
+- Plan 1 – Retrain RF without Year and save results
+- Plan 2 – Permutation importance for Year on original model, we keep the original RF (with Year), and only measure how important Year is.
+- Plan 3 – If “no Year” model looks better, inspect and tweak it, assuming Plan 1 showed RF without Year is better and you decide to keep rf_no_year:
          3a. Inspect trees and depth
          3b. Class balance of predictions (H/D/A)
          3c. Try a small hyperparameter tweak – min_samples_leaf
